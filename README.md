@@ -17,7 +17,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/rule-engine.git
+git clone https://github.com/varuncaeser/Zeotap_Rule_Engine_App-Using-Flask.git
 cd rule-engine
 Install required dependencies:
 
@@ -46,10 +46,11 @@ rule-engine/
 │
 ├── static/                   # Contains static assets (e.g., CSS files)
 ├── templates/                # HTML templates
-├── rule_engine/              # Main application folder
-│   ├── models.py             # Database models
-│   ├── views.py              # View functions
-│   └── engine/               # Core rule processing logic
+├── Zeotap_Rule_Engine_App-Using-Flask
+/              # Main application folder
+│   ├── app.py             # Database models
+│   ├── ast_engine.py              # View functions
+│   └── database.py               # Core rule processing logic
 │
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
