@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Rule Engine</h1>
+        <form id="ruleForm">
+            <input type="text" id="ruleInput" placeholder="Enter rule here..."/>
+            <button type="button" onclick="submitRule()">Create Rule</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function submitRule() {
+            const rule = document.getElementById('ruleInput').value;
+            fetch('/create_rule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ rule }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = data.message;
+            });
+        }
+    </script>
+</body>
+</html>
